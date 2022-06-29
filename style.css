@@ -12,14 +12,32 @@
 }
 /*div for score board*/
 #score{
-
+    display: flex;
+    justify-content: space-between;
 }
 /*Player & comp score spots*/
-
-
+#playerScore {
+    margin-left: 4em;
+}
+#computerScore{
+    margin-right: 4em;
+}
+#playerDude{
+    margin-left: 1em;
+}
+#compDude{
+    margin-left: 2.5em;
+}
 /*Scores*/
-
-
+#computerCount , #playerCount{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+#moveCounter {
+    margin: auto;
+    margin-top: 0;
+}
 /*For the buttons -- to get them all in line*/
 .options{
     display: flex;
@@ -44,7 +62,17 @@ button {
     cursor: pointer;
 }
 /*for restart button*/
-
+#restart{
+    margin: auto;
+    text-align: center;
+    display: none;
+    background: thistle;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+}
 
 /*for win / lose*/
 

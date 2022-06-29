@@ -1,43 +1,42 @@
-//all of logic will go into one giant game function
-function game() {
-  //variables declared for future funcs.
+//all game goes into one function w functions within
+const game = () => {
+  //variables to show scores and moves
   let playerScore = 0;
   let computerScore = 0;
   let moves = 0;
   let page = document.querySelector("html");
-  //function for event listeners
+  //function from lines 7-33
   function playTheGame() {
     let rock = document.getElementById("rock");
     let paper = document.getElementById("paper");
     let scissor = document.getElementById("scissor");
     let playerOptions = [rock, paper, scissor];
-    let computerOptions = ["rock", "paper", "scissors"];
+    let computerChoices = ["rock", "paper", "scissors"];
 
     playerOptions.forEach((buttonChoices) => {
-      //adding event listeners
+      //adding listener for clicks
       buttonChoices.addEventListener("click", function () {
-        //for moves counter
+        //logic for the moves left counter
         let movesLeft = document.getElementById("moveCounter");
         moves++;
         movesLeft.innerText = "Moves Left: " + (5 - moves);
         let randomChoice = Math.floor(Math.random() * 3);
-        let computerPick = computerOptions[randomChoice];
-        //func to see who wins (winner defined after this)
+        let computerPick = computerChoices[randomChoice];
+        // Function to see who wins (winning func below)
         winner(this.innerText, computerPick);
-        //for when no moves left gameOver func later in code
+        // for when moves run out func two down
         if (moves === 5) {
           gameOver(playerOptions, movesLeft);
         }
       });
     });
   }
-  //calling function
-  playTheGame();
-  //for deciding winner
+
+  // Function to decide winner
   const winner = (player, computer) => {
     const result = document.getElementById("result");
-    const playerScoreBoard = document.getElementById("playerScore");
-    const computerScoreBoard = document.getElementById("computerScore");
+    const playerScoreBoard = document.getElementById("playerCount");
+    const computerScoreBoard = document.getElementById("computerCount");
     player = player.toLowerCase();
     computer = computer.toLowerCase();
     //logic to show winning or losing conditions
@@ -109,5 +108,10 @@ function game() {
       window.location.reload();
     });
   };
-}
+
+  // Calling playGame function inside game
+  playTheGame();
+};
+
+// Calling the game function
 game();
