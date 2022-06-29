@@ -31,6 +31,83 @@ function game() {
       });
     });
   }
+  //calling function
   playTheGame();
+  //for deciding winner
+  const winner = (player, computer) => {
+    const result = document.getElementById("result");
+    const playerScoreBoard = document.getElementById("playerScore");
+    const computerScoreBoard = document.getElementById("computerScore");
+    player = player.toLowerCase();
+    computer = computer.toLowerCase();
+    //logic to show winning or losing conditions
+    if (player === computer) {
+      result.innerText = "Tie";
+    } else if (player == "rock") {
+      if (computer == "paper") {
+        result.innerText = "Computer Won";
+        computerScore++;
+        computerScoreBoard.textContent = computerScore;
+      } else {
+        result.innerText = "Player Won";
+        playerScore++;
+        playerScoreBoard.textContent = playerScore;
+      }
+    } else if (player == "scissors") {
+      if (computer == "rock") {
+        result.innerText = "Computer Won";
+        computerScore++;
+        computerScoreBoard.textContent = computerScore;
+      } else {
+        result.innerText = "Player Won";
+        playerScore++;
+        playerScoreBoard.textContent = playerScore;
+      }
+    } else if (player == "paper") {
+      if (computer == "scissors") {
+        result.innerText = "Computer Won";
+        computerScore++;
+        computerScoreBoard.textContent = computerScore;
+      } else {
+        result.innerText = "Player Won";
+        playerScore++;
+        playerScoreBoard.textContent = playerScore;
+      }
+    }
+  };
+
+  // Function to run when game is over
+  const gameOver = (playerOptions, movesLeft) => {
+    const chooseMove = document.getElementById("move");
+    const result = document.getElementById("result");
+    const reloadBtn = document.getElementById("restart");
+
+    playerOptions.forEach((option) => {
+      option.style.display = "none";
+    });
+    chooseMove.style.color = "cornflowerblue";
+    chooseMove.innerText = "Game Over!!";
+    movesLeft.style.display = "none";
+    //logic for wether they win or lose
+    if (playerScore > computerScore) {
+      result.style.fontSize = "2rem";
+      result.innerText = "DUBS ALL AROUND!!";
+      page.style.backgroundImage = "url(assets/confetti.gif)";
+      result.style.color = "cornflowerblue";
+    } else if (playerScore < computerScore) {
+      result.style.fontSize = "2rem";
+      result.innerText = "Loser Alert (You lost)";
+      result.style.color = "thistle";
+    } else {
+      result.style.fontSize = "2rem";
+      result.innerText = "Tie";
+      result.style.color = "grey";
+    }
+    reloadBtn.innerText = "Restart";
+    reloadBtn.style.display = "flex";
+    reloadBtn.addEventListener("click", () => {
+      window.location.reload();
+    });
+  };
 }
 game();
