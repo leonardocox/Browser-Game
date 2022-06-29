@@ -1,6 +1,14 @@
-/*Div containing whole game card*/
+/*Div containing whole game card -- makes everything center*/
 #game{
-
+    display: flex;
+    flex-direction: column;
+    height: 35em;
+    width: 70%;
+    border: 5px solid black;
+    justify-content: center;
+    padding: auto;
+    margin: auto;
+    background-color: mintcream;
 }
 /*div for score board*/
 #score{
@@ -12,12 +20,29 @@
 /*Scores*/
 
 
-/*For the buttons*/
+/*For the buttons -- to get them all in line*/
+.options{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 0;
+}
 
-
-/*for pic with buttons once added in*/
-
-
+/*for pic with buttons once added in -- to get below */
+.imgBtn {
+    width: 120px;
+}
+button {
+    padding: .8rem;
+    width: 100px;
+    border-radius: 10px;
+    background-color: thistle;
+    outline: none;
+    border-color: thistle;
+    border: none;
+    cursor: pointer;
+}
 /*for restart button*/
 
 
@@ -28,3 +53,7 @@
 
 
 /*any image styling needed*/
+img{
+    height:4em;
+    padding: 1em;
+}
