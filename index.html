@@ -2,14 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Milestone Proj 1 :D</title>
+    <meta
+      name="viewport"
+      content="width=device-width,
+                initial-scale=1.0"
+    />
     <link rel="stylesheet" href="style.css" />
+    <title>Milestone Proj :D</title>
   </head>
   <body>
     <div id="game">
-      <!--Will display scores of player/ comp-->
+      <!--Display Score of player and computer -->
       <div id="score">
         <div id="playerScore">
           <h2>Your Score</h2>
@@ -23,30 +26,32 @@
         </div>
       </div>
 
-      <!--Will be for picking options-->
-      <p>Choose Your Fighter</p>
+      <p id="move">Choose your Fighter</p>
+
+      <!--Options available to player to play game -->
       <div class="options">
-        <div class="btnImg">
+        <div class="imgBtn">
           <button id="rock">Rock</button>
           <img src="/assets/rocks-1.png.png" />
         </div>
-        <div class="btnImg">
+        <div class="imgBtn">
           <button id="paper">Paper</button>
           <img src="/assets/paper-1.png.png" />
         </div>
-        <div class="btnImg">
+        <div class="imgBtn">
           <button id="scissor">Scissors</button>
           <img src="/assets/scissors-1.png.png" />
         </div>
       </div>
-
-      <!--Number of moves before game ends-->
+      <!--Number of moves left before game ends -->
       <div id="moveCounter">Moves Left: 5</div>
-      <!--For Results of game after counter at 0-->
+      <!--Final result of game -->
       <div id="result"></div>
-      <!--Will be for game restart-->
+
+      <!--Reload the game -->
       <button id="restart"></button>
     </div>
+
     <script src="index.js"></script>
   </body>
 </html>

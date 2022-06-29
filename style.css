@@ -1,68 +1,77 @@
-/*Div containing whole game card -- makes everything center*/
-#game{
+/*div containing whole game card&*/ 
+#game {
     display: flex;
     flex-direction: column;
     height: 35em;
     width: 70%;
-    border: 5px solid black;
+    border: 2px solid black;
     justify-content: center;
     padding: auto;
     margin: auto;
     background-color: mintcream;
 }
-/*div for score board*/
-#score{
+
+/*div containing score board*/ #score {
     display: flex;
     justify-content: space-between;
 }
-/*Player & comp score spots*/
-#playerScore {
+
+/*Player & computer score spots*/ #playerScore {
     margin-left: 4em;
 }
-#computerScore{
+
+#computerScore {
     margin-right: 4em;
+
 }
-#playerDude{
+
+#playerDude {
     margin-left: 1em;
 }
-#compDude{
+
+#compDude {
     margin-left: 2.5em;
+
 }
-/*Scores*/
-#computerCount , #playerCount{
+
+/* Scores*/
+#playerCount,
+#computerCount{
     text-align: center;
     font-size: 1.5rem;
     margin-top: 1rem;
 }
-#moveCounter {
+
+#moveCounter{
     margin: auto;
     margin-top: 0;
 }
-/*For the buttons -- to get them all in line*/
-.options{
+
+/*for the buttons*/
+.options {
     display: flex;
+    width: 50vw;
     justify-content: space-evenly;
     text-align: center;
-    margin: auto;
+    margin:auto;
     margin-bottom: 0;
 }
-
-/*for pic with buttons once added in -- to get below */
+/*div containing option buttons with pictures*/
 .imgBtn {
     width: 120px;
 }
 button {
-    padding: .8rem;
+    padding: 0.8rem;
     width: 100px;
     border-radius: 10px;
-    background-color: thistle;
+    background: thistle;
     outline: none;
     border-color: thistle;
     border: none;
     cursor: pointer;
 }
-/*for restart button*/
-#restart{
+/*for the restart button*/
+#restart {
     margin: auto;
     text-align: center;
     display: none;
@@ -73,15 +82,23 @@ button {
     cursor: pointer;
     justify-content: center;
 }
-
-/*for win / lose*/
-
-
-/*Moves counter*/
-
-
-/*any image styling needed*/
-img{
-    height:4em;
+/*game over or game won*/
+#result {
+    margin: auto; 
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: cornflowerblue;
+}
+/*counter for moves left*/
+#move {
+    font-size: 2rem;
+    font-weight: bold;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 0;
+}
+/*for sizing images*/
+img {
+    height: 4em;
     padding: 1em;
 }
