@@ -23,3 +23,7 @@ basically in one day. I had started a different web game that was going great, b
 
 One bug I found is in my deployment my images will not load and I am not sure why, still looking into it,
 https://leonardocox.github.io/Browser-Game/ is link to page
+
+---
+
+Just fixed the code for the problem above, I had the assets linked absolutely instead of the correct way!

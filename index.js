@@ -1,30 +1,32 @@
-//all game goes into one function w functions within
+//all game goes into one function with functions within
 const game = () => {
   //variables to show scores and moves
   let playerScore = 0;
   let computerScore = 0;
   let moves = 0;
   let page = document.querySelector("html");
-  //function from lines 7-33
+  //function for game logic
   function playTheGame() {
     let rock = document.getElementById("rock");
     let paper = document.getElementById("paper");
     let scissor = document.getElementById("scissor");
+    //arrays for options for player and comp
     let playerOptions = [rock, paper, scissor];
     let computerChoices = ["rock", "paper", "scissors"];
 
     playerOptions.forEach((buttonChoices) => {
       //adding listener for clicks
       buttonChoices.addEventListener("click", function () {
-        //logic for the moves left counter
+        //logic for the moves counter
         let movesLeft = document.getElementById("moveCounter");
         moves++;
         movesLeft.innerText = "Moves Left: " + (5 - moves);
+        //code to make the  computer pick randomly
         let randomChoice = Math.floor(Math.random() * 3);
         let computerPick = computerChoices[randomChoice];
         // Function to see who wins (winning func below)
         winner(this.innerText, computerPick);
-        // for when moves run out func two down
+        // for when moves run out
         if (moves === 5) {
           gameOver(playerOptions, movesLeft);
         }
@@ -46,6 +48,7 @@ const game = () => {
       if (computer == "paper") {
         result.innerText = "Computer Won";
         computerScore++;
+        //code below gets the score to go up onto scroeboard
         computerScoreBoard.textContent = computerScore;
       } else {
         result.innerText = "Player Won";
@@ -84,6 +87,7 @@ const game = () => {
     playerOptions.forEach((option) => {
       option.style.display = "none";
     });
+    //displays when game is over
     chooseMove.style.color = "cornflowerblue";
     chooseMove.innerText = "Game Over!!";
     movesLeft.style.display = "none";
